@@ -1,11 +1,11 @@
 {
   "name": "strapi-plugin-semantic-content-type-builder",
   "version": "0.0.1",
-  "description": "This is the description of the plugin.",
+  "description": "Strapi plugin semantic builder for content types based on Schema.org vocabulary.",
   "strapi": {
     "name": "Semantic CT builder",
     "icon": "cubes",
-    "description": "Builder for content types by semantic Schema.org vocabulary"
+    "description": "Builder for content types based on Schema.org vocabulary"
   },
   "scripts": {
     "analyze:clean": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/rimraf stats.json",
