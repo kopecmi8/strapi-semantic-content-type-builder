@@ -1,0 +1,56 @@
+{
+  "name": "strapi-plugin-semantic-content-type-builder",
+  "version": "0.0.1",
+  "description": "This is the description of the plugin.",
+  "strapi": {
+    "name": "Semantic CT builder",
+    "icon": "cubes",
+    "description": "Builder for content types by semantic Schema.org vocabulary"
+  },
+  "scripts": {
+    "analyze:clean": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/rimraf stats.json",
+    "preanalyze": "npm run analyze:clean",
+    "analyze": "node ./node_modules/strapi-helper-plugin/lib/internals/scripts/analyze.js",
+    "prebuild": "npm run build:clean && npm run test",
+    "build:dev": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=development node ./node_modules/strapi-helper-plugin/node_modules/.bin/webpack --config node_modules/strapi-helper-plugin/lib/internals/webpack/webpack.prod.babel.js --color -p --progress",
+    "build": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=production node node_modules/strapi-helper-plugin/node_modules/.bin/webpack --config node_modules/strapi-helper-plugin/lib/internals/webpack/webpack.prod.babel.js --color -p --progress",
+    "build:clean": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/rimraf admin/build",
+    "start": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/cross-env NODE_ENV=development node ./node_modules/strapi-helper-plugin/lib/server",
+    "generate": "node ./node_modules/plop/plop.js --plopfile node_modules/strapi-helper-plugin/lib/internals/generators/index.js",
+    "lint": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/eslint --ignore-path .gitignore --ignore-pattern '/admin/build/' --config ./node_modules/strapi-helper-plugin/lib/internals/eslint/.eslintrc.json admin",
+    "prettier": "node ./node_modules/strapi-helper-plugin/node_modules/.bin/prettier --single-quote --trailing-comma es5 --write \"{admin,__{tests,mocks}__}/**/*.js\"",
+    "test": "npm run lint",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "jsonld": "^1.0.1",
+    "jsonld-request": "^0.2.0",
+    "react-datalist": "^4.0.0",
+    "react-select": "^1.2.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "schema.org": "^3.1.0",
+    "superagent": "^3.8.2",
+    "then-request": "^5.0.0"
+  },
+  "devDependencies": {
+    "strapi-helper-plugin": "3.0.0-alpha.11"
+  },
+  "author": {
+    "name": "Michal Kopecký",
+    "email": "michalkopeck@gmail.com",
+    "url": "http://kopeckymichal.cz"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">= 7.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "license": "MIT"
+}

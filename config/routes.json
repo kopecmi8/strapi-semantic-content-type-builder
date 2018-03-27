@@ -1,0 +1,36 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/models",
+      "handler": "SemanticContentTypeBuilder.getModels",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/models/:model",
+      "handler": "SemanticContentTypeBuilder.getModel",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/types",
+      "handler": "SemanticContentTypeBuilder.getTypes",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/properties/:type",
+      "handler": "SemanticContentTypeBuilder.getProperties",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
